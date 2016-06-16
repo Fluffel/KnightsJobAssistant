@@ -1,0 +1,1 @@
+extends "res://Scenes/BattleArenaScene/Monsters/monster.gd"

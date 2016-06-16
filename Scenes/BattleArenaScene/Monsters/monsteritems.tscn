@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Scenes/BattleArenaScene/Monsters/monsteritems.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/BattleArenaScene/Knight/blaue Poiton.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Panel" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1.63044, -1.07526 )
+transform/scale = Vector2( 0.0708502, 0.0923794 )
+texture = ExtResource( 2 )
+
+

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Scenes/BattleArenaScene/BattleArena.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/BattleArenaScene/Knight/Knight.tscn" type="PackedScene" id=2]
+
+[node name="Control" type="Control"]
+
+anchor/right = 1
+margin/bottom = 563.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+script/script = ExtResource( 1 )
+
+[node name="kampf" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="Knight" parent="kampf" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 166.151, 303.296 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
+
