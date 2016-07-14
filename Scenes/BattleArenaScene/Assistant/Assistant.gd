@@ -1,6 +1,8 @@
 
 extends Control
 
+# variablen deklination
+
 var aPos = Array()
 var aScale = Array()
 var speed = 1
