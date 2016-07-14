@@ -152,7 +152,7 @@ transform/rot = 2.7249
 
 [node name="Körper" type="Sprite" parent="Huefte"]
 
-transform/pos = Vector2( 2.60958e-06, -70.1255 )
+transform/pos = Vector2( 2.60958e-006, -70.1255 )
 z/z = 1
 texture = ExtResource( 2 )
 offset = Vector2( 4.04765, 32.7532 )

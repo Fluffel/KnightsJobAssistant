@@ -20,7 +20,7 @@ func _ready():
 	else:
 		state = 0
 		anim.play("idle")
-		print("no mosnter")
+		#print("no mosnter")
 
 func ready_monster_loaded():
 	
@@ -31,7 +31,7 @@ func ready_monster_loaded():
 	else:
 		state = 0
 		anim.play("idle")
-		print("no mosnter")
+		#print("no mosnter")
 	
 func after_attack():
 	#ausdauerverringerm
@@ -48,7 +48,7 @@ func attack():
 	anim.play("attack")
 
 func dealDamage():
-	print("Damage dealt")
+	#print("Damage dealt")
 	currentMonster.monsterTakesDmg(strength)
 
 func knightTakesDmg(value):

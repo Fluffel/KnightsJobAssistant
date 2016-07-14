@@ -11,6 +11,8 @@ export var resistenceWhite = 0.0
 export var speed = 0.0 #attack speed
 export var intelligence = 0.0 #hit chance, crit chance, dodge?,  
 var timer = Timer.new()
+
+
 onready var animP = get_node("animP")
 #export (Animation) var anim_attack
 #export (Animation) var anim_idle
@@ -42,7 +44,7 @@ func get_strengthFactor(multiply):
 	
 func set_spawnPos():
 	set_pos(Vector2(300,200)) 
-	print("monserterPos: ",get_pos())
+	#print("monserterPos: ",get_pos())
 func die():
 	
 	player.state = 0
@@ -57,16 +59,15 @@ func attack():
 	var anim_attack = animP.get_animation("attack")
 	if (anim_attack.get_length() > timer.get_wait_time()):
 		atk_speed = anim_attack.get_length() / timer.get_wait_time()
-	print("atk_speed",atk_speed)
+	#print("atk_speed",atk_speed)
 	animP.play("attack")
 	timer.start()
 	
 func monsterTakesDmg(value):
 	var r = randf()
 	hp -= value
-#	if r <= 1:
-#		dropItem(r)
-	dropItem(r)
+	if r <= 0.5:
+		dropItem(r)
 	if hp <= 0:
 		die()
 		
@@ -77,7 +78,7 @@ func dealDamage():
 	
 func startFighting():
 	timer.start()
-	print("timer started")
+	#print("timer started")
 	
 
 func dropItem(valueDroppedItem):

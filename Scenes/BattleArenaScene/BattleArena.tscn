@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://Scenes/BattleArenaScene/BattleArena.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BattleArenaScene/Knight/Knight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/BattleArenaScene/Assistant/Assistant.tscn" type="PackedScene" id=3]
 
 [node name="Control" type="Control"]
 
@@ -31,5 +32,7 @@ process_mode = 1
 wait_time = 3.0
 one_shot = true
 autostart = false
+
+[node name="Assistant" parent="." instance=ExtResource( 3 )]
 
 
