@@ -2,11 +2,17 @@
 extends Sprite
 
 export var strength = 20
-var agility
+export var agility = 0.0
 export var hp = 100
+export var defense = 0.0
+export var crit = 0.0
+export var lifeReg = 0.0
 var hunger
+
 var state = 0
 var currentMonster
+var selectedPotions = []
+var buffs = []
 
 onready var anim = get_node("anim")
 
@@ -47,9 +53,12 @@ func after_attack():
 func attack():
 	anim.play("attack")
 
+
 func dealDamage():
 	#print("Damage dealt")
 	currentMonster.monsterTakesDmg(strength)
+	
+
 
 func knightTakesDmg(value):
 	hp -= value

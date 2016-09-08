@@ -84,7 +84,7 @@ func startFighting():
 func dropItem(valueDroppedItem):
 	var packedScene = load("res://Scenes/BattleArenaScene/Monsters/monsteritems.tscn")
 	var item = packedScene.instance()
-	get_parent().get_parent().add_child(item)
+	get_parent().get_parent().get_node("items").add_child(item)
 
 
 

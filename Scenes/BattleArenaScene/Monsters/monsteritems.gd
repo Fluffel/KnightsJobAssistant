@@ -2,7 +2,7 @@
 extends Node2D
 
 var ges = Vector2(-randi() %80 -20, -randi() %100 -20)
-var gravity = 75
+var gravity = 150
 var bes = Vector2(0, gravity)
 
 var r = randf()
@@ -23,7 +23,7 @@ var timer = Timer.new()
 func _ready():
 	timer.set_wait_time(5)
 	timer.start()
-	set_pos(get_parent().get_node("kampf").get_child(1).get_pos())
+	set_pos(get_parent().get_parent().get_node("kampf").get_child(1).get_pos())
 	spawnPos = get_pos()
 	calculateMovement()
 	set_process(true)
@@ -34,10 +34,10 @@ func _process(delta):
 	
 	set_pos(get_pos() + ges * delta)
 	if ges.y  > 0 and get_pos().y >= factorLandingpos:
-		print("ges.x war: ", ges.x * delta)
-		get_parent().get_node("Assistant").appendInformation(get_pos(), get_scale())
-		print("realTimer: ", timer.get_time_left())
-		print("realLPos: ", get_pos())
+		#print("ges.x war: ", ges.x * delta)
+		get_parent().get_parent().get_node("assistant").appendInformation(self)
+		#print("realTimer: ", timer.get_time_left())
+		#print("realLPos: ", get_pos())
 		set_process(false)
 	
 	ges = ges + bes * delta
@@ -45,28 +45,28 @@ func _process(delta):
 func calculateMovement():
 	var posAfterMoveUp
 	var distanceDown
-	print ("ges.: ", ges.y)
-	print ("bes.: ", bes.y)
-	print ("Landingos: ", factorLandingpos)
-	print ("spawnPos: ", spawnPos)
+#	print ("ges.: ", ges.y)
+#	print ("bes.: ", bes.y)
+#	print ("Landingos: ", factorLandingpos)
+#	print ("spawnPos: ", spawnPos)
 	
 	flyingTimeUp = abs(ges.y) / bes.y
-	print ("flyingTimeUp: ", flyingTimeUp)
+	#print ("flyingTimeUp: ", flyingTimeUp)
 	posAfterMoveUp = spawnPos.y + (0.5 * flyingTimeUp * ges.y)
-	print ("posAfterMoveUp: ", posAfterMoveUp)
+	#print ("posAfterMoveUp: ", posAfterMoveUp)
 	if posAfterMoveUp >= factorLandingpos:
 		distanceDown = 0
-		print ("distanceDown: ", distanceDown)
+		#print ("distanceDown: ", distanceDown)
 		flyingTime = flyingTimeUp
 		posAfterLanding = Vector2(spawnPos.x + flyingTime * ges.x, posAfterMoveUp)
 	else:
 		distanceDown = factorLandingpos - posAfterMoveUp
-		print ("distanceDown: ", distanceDown)
+		#print ("distanceDown: ", distanceDown)
 		flyingTime = sqrt(distanceDown / (0.5 * bes.y)) + flyingTimeUp
 		posAfterLanding = Vector2(spawnPos.x + flyingTime * ges.x, factorLandingpos)
 	
-	print("calculatedPosAL: ", posAfterLanding)
-	print("expectedFlyingtime: ", flyingTime)
+#	print("calculatedPosAL: ", posAfterLanding)
+#	print("expectedFlyingtime: ", flyingTime)
 	scaleCalculation()
 	
 func scaleCalculation():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://Scenes/BattleArenaScene/Knight/Knight.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BattleArenaScene/Knight/Koerper.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/BattleArenaScene/Knight/FL_Bein.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/BattleArenaScene/Knight/BU_Bein.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/BattleArenaScene/Knight/BL_Bein.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/BattleArenaScene/Knight/BuffBar.scn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 
@@ -112,7 +113,11 @@ transform/pos = Vector2( 181.056, 668.783 )
 transform/scale = Vector2( 4.02679, 4.02679 )
 script/script = ExtResource( 1 )
 strength = 20
+agility = 0.0
 hp = 100
+defense = 0.0
+crit = 0.0
+lifeReg = 0.0
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 
@@ -152,7 +157,7 @@ transform/rot = 2.7249
 
 [node name="Körper" type="Sprite" parent="Huefte"]
 
-transform/pos = Vector2( 2.60958e-006, -70.1255 )
+transform/pos = Vector2( 2.60958e-06, -70.1255 )
 z/z = 1
 texture = ExtResource( 2 )
 offset = Vector2( 4.04765, 32.7532 )
@@ -269,5 +274,12 @@ __meta__ = { "_edit_bone_":true }
 transform/pos = Vector2( 0.496674, 39.2374 )
 transform/scale = Vector2( 0.1, 0.1 )
 __meta__ = { "_edit_bone_":true }
+
+[node name="BuffBar" parent="." instance=ExtResource( 12 )]
+
+margin/left = -43.0
+margin/top = -203.0
+margin/right = 83.0
+margin/bottom = -183.0
 
 
