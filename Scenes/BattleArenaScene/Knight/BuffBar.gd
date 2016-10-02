@@ -1,6 +1,6 @@
 
 extends Control
-var buffs = get_parent().buffs
+onready var buffs = get_parent().buffs
 
 
 func _ready():
@@ -16,11 +16,11 @@ func arrangeBuffs():
 			add_child(b)
 			
 	var count = get_child_count()
-	var buffSize = 20
 	var width = get_size().x
-	var space = 10
+	var space = width / 9
 	var i = 0
 	
 	for c in get_children():
-		c.set_pos((width - (buffSize * count + (count - 1) * space)) / 2 + i * (buffSize + space), 0)
+#		c.set_pos(Vector2((width - (buffSize * count + (count - 1) * space)) / 2 + i * (buffSize + space), 0))
+		c.set_pos(Vector2((width - ((count - 1) * space)) / 2 + i * space, 0))
 		i += 1

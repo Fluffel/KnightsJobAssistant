@@ -11,6 +11,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
 
 [node name="battleArena" parent="." instance=ExtResource( 1 )]
 
@@ -21,8 +25,28 @@ margin/bottom = 725.0
 
 [node name="Menue_Ingame_Bottom" parent="." instance=ExtResource( 2 )]
 
+margin/left = 0.0
 margin/top = 300.0
+margin/right = 0.0
 margin/bottom = 0.0
+
+[node name="TabContainer" parent="Menue_Ingame_Bottom"]
+
+editor/display_folded = true
+margin/left = 0.0
+margin/right = 0.0
+
+[node name="CustomTab" parent="Menue_Ingame_Bottom/TabContainer"]
+
+margin/top = 32.0
+
+[node name="CustomTab 2" parent="Menue_Ingame_Bottom/TabContainer"]
+
+margin/top = 32.0
+
+[node name="CustomTab 3" parent="Menue_Ingame_Bottom/TabContainer"]
+
+margin/top = 32.0
 
 
 [editable path="battleArena"]

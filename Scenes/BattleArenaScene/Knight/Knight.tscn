@@ -22,58 +22,72 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Huefte/Körper/FU_Arm:transform/rot")
 tracks/0/interp = 1
-tracks/0/keys = { "cont":true, "times":FloatArray( 0, 0.2, 0.8, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "values":[ 0.0, 19.8624, 204.871, 3.30307 ] }
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.2, 0.8, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 19.8624, 204.871, 3.30307 ] }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Huefte/Körper/FU_Arm/FL_Arm:transform/rot")
 tracks/1/interp = 1
-tracks/1/keys = { "cont":true, "times":FloatArray( 0, 0.2, 0.8, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "values":[ 12.9757, 70.9217, 112.476, 9.01291 ] }
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.2, 0.8, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 12.9757, 70.9217, 112.476, 9.01291 ] }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Huefte/Körper/BU_Arm:transform/rot")
 tracks/2/interp = 1
-tracks/2/keys = { "cont":true, "times":FloatArray( 0, 0.4, 0.7, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "values":[ 0.165762, -62.4867, -58.192, 0.887269 ] }
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 0.4, 0.7, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.165762, -62.4867, -58.192, 0.887269 ] }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Huefte/Körper/BU_Arm/BL_Arm:transform/rot")
 tracks/3/interp = 1
-tracks/3/keys = { "cont":true, "times":FloatArray( 0, 0.4, 0.7, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "values":[ 0.0, 65.0674, 103.458, 4.86153 ] }
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0, 0.4, 0.7, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 65.0674, 103.458, 4.86153 ] }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Huefte/Körper/Kopf:transform/rot")
 tracks/4/interp = 1
-tracks/4/keys = { "cont":true, "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "values":[ 0.0, 22.8942, -0.452595 ] }
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 22.8942, -0.452595 ] }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Huefte/Körper/Kopf:transform/pos")
 tracks/5/interp = 1
-tracks/5/keys = { "cont":true, "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "values":[ Vector2( 2.01877, -22.9794 ), Vector2( -0.216276, -22.9794 ), Vector2( 1.5221, -22.7311 ) ] }
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 2.01877, -22.9794 ), Vector2( -0.216276, -22.9794 ), Vector2( 1.5221, -22.7311 ) ] }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Huefte/Körper:transform/rot")
 tracks/6/interp = 1
-tracks/6/keys = { "cont":true, "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ 0.0 ] }
+tracks/6/imported = false
+tracks/6/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 0.0 ] }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Huefte:transform/rot")
 tracks/7/interp = 1
-tracks/7/keys = { "cont":true, "times":FloatArray( 0, 0.6, 1 ), "transitions":FloatArray( 1, 1, 1 ), "values":[ 0.0, 10.8996, 0.0 ] }
+tracks/7/imported = false
+tracks/7/keys = { "times":FloatArray( 0, 0.6, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 10.8996, 0.0 ] }
 tracks/8/type = "value"
 tracks/8/path = NodePath("FU_Bein:transform/rot")
 tracks/8/interp = 1
-tracks/8/keys = { "cont":true, "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "values":[ 0.0, -6.48009 ] }
+tracks/8/imported = false
+tracks/8/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, -6.48009 ] }
 tracks/9/type = "value"
 tracks/9/path = NodePath("FU_Bein/FL_Bein:transform/rot")
 tracks/9/interp = 1
-tracks/9/keys = { "cont":true, "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "values":[ -1.4, -7.91658 ] }
+tracks/9/imported = false
+tracks/9/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -1.4, -7.91658 ] }
 tracks/10/type = "value"
 tracks/10/path = NodePath("BU_Bein:transform/rot")
 tracks/10/interp = 1
-tracks/10/keys = { "cont":true, "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "values":[ 22.0902, 36.2238, 11.7541 ] }
+tracks/10/imported = false
+tracks/10/keys = { "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 22.0902, 36.2238, 11.7541 ] }
 tracks/11/type = "value"
 tracks/11/path = NodePath("BU_Bein/BL_Bein:transform/rot")
 tracks/11/interp = 1
-tracks/11/keys = { "cont":true, "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "values":[ -21.6742, -32.1582, -21.6742 ] }
+tracks/11/imported = false
+tracks/11/keys = { "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ -21.6742, -32.1582, -21.6742 ] }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Huefte/Körper/FU_Arm/FL_Arm/Node2D/waepon:transform/rot")
 tracks/12/interp = 1
-tracks/12/keys = { "cont":true, "times":FloatArray( 0, 0.6, 0.8, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "values":[ 92.7695, 66.649, 40.2179, 88.9446 ] }
+tracks/12/imported = false
+tracks/12/keys = { "times":FloatArray( 0, 0.6, 0.8, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 92.7695, 66.649, 40.2179, 88.9446 ] }
 tracks/13/type = "method"
 tracks/13/path = NodePath(".")
 tracks/13/interp = 1
+tracks/13/imported = false
 tracks/13/keys = { "times":FloatArray( 0.9 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"dealDamage" } ] }
 
 [sub_resource type="Animation" id=2]
@@ -85,27 +99,33 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Huefte/Körper/FU_Arm:transform/rot")
 tracks/0/interp = 1
-tracks/0/keys = { "cont":true, "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "values":[ 0.0, 17.4601, 0.0 ] }
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 17.4601, 0.0 ] }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Huefte/Körper/BU_Arm:transform/rot")
 tracks/1/interp = 1
-tracks/1/keys = { "cont":true, "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "values":[ 0.165762, -16.7612, 0.165762 ] }
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.165762, -16.7612, 0.165762 ] }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BU_Bein:transform/pos")
 tracks/2/interp = 1
-tracks/2/keys = { "cont":true, "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ Vector2( 17.7917, -54.5341 ) ] }
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 17.7917, -54.5341 ) ] }
 tracks/3/type = "value"
 tracks/3/path = NodePath("BU_Bein:transform/rot")
 tracks/3/interp = 1
-tracks/3/keys = { "cont":true, "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ 75.1752 ] }
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 75.1752 ] }
 tracks/4/type = "value"
 tracks/4/path = NodePath("FU_Bein:transform/pos")
 tracks/4/interp = 1
-tracks/4/keys = { "cont":true, "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ Vector2( 11.3364, -53.2505 ) ] }
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 11.3364, -53.2505 ) ] }
 tracks/5/type = "value"
 tracks/5/path = NodePath("FU_Bein:transform/rot")
 tracks/5/interp = 1
-tracks/5/keys = { "cont":true, "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ -76.1193 ] }
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ -76.1193 ] }
 
 [node name="Knight" type="Sprite"]
 
@@ -113,22 +133,23 @@ transform/pos = Vector2( 181.056, 668.783 )
 transform/scale = Vector2( 4.02679, 4.02679 )
 script/script = ExtResource( 1 )
 strength = 20
-agility = 0.0
-hp = 100
 defense = 0.0
-crit = 0.0
+agility = 0.0
 lifeReg = 0.0
+crit = 0.0
+hp = 100
+attackSpeed = 0.2
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="healthBar" type="ProgressBar" parent="."]
 
-margin/left = -121.0
-margin/top = -130.0
-margin/right = 1.0
-margin/bottom = -114.0
-rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -70.0
+margin/top = 7.0
+margin/right = 70.0
+margin/bottom = 27.0
 range/min = 0.0
 range/max = 100.0
 range/step = 1.0
@@ -165,6 +186,7 @@ __meta__ = { "_edit_bone_":true }
 
 [node name="BU_Arm" type="Sprite" parent="Huefte/Körper"]
 
+editor/display_folded = true
 transform/pos = Vector2( 3.21575, 17.9406 )
 transform/rot = -18.8058
 z/z = -1
@@ -172,7 +194,7 @@ texture = ExtResource( 3 )
 centered = false
 offset = Vector2( -7.36183, -5.15706 )
 modulate = Color( 0.5, 0.402344, 0.402344, 1 )
-__meta__ = { "_edit_bone_":true, "_edit_ik_":true, "_editor_collapsed":true }
+__meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
 [node name="BL_Arm" type="Sprite" parent="Huefte/Körper/BU_Arm"]
 
@@ -233,11 +255,11 @@ __meta__ = { "_edit_bone_":true }
 
 [node name="FU_Bein" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 11.3364, -53.2505 )
 transform/rot = -76.1193
 texture = ExtResource( 8 )
 offset = Vector2( 0.602062, 17.4034 )
-__meta__ = { "_editor_collapsed":true }
 
 [node name="FL_Bein" type="Sprite" parent="FU_Bein"]
 
@@ -255,11 +277,11 @@ __meta__ = { "_edit_bone_":true }
 
 [node name="BU_Bein" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 17.7917, -54.5341 )
 transform/rot = 75.1752
 texture = ExtResource( 10 )
 offset = Vector2( 0.443252, 20.5915 )
-__meta__ = { "_editor_collapsed":true }
 
 [node name="BL_Bein" type="Sprite" parent="BU_Bein"]
 
@@ -278,8 +300,24 @@ __meta__ = { "_edit_bone_":true }
 [node name="BuffBar" parent="." instance=ExtResource( 12 )]
 
 margin/left = -43.0
-margin/top = -203.0
+margin/top = -205.0
 margin/right = 83.0
 margin/bottom = -183.0
+
+[node name="attackSpeedHandler" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="lifeReg" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="lifeReg" to="." method="_on_lifeReg_timeout"]
 
 

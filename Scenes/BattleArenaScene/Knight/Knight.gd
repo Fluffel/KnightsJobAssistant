@@ -2,24 +2,38 @@
 extends Sprite
 
 export var strength = 20
-export var agility = 0.0
-export var hp = 100
 export var defense = 0.0
-export var crit = 0.0
+export var agility = 0.0
 export var lifeReg = 0.0
+export var crit = 0.0
+export var hp = 100
+export var attackSpeed = 0.5
+# diese Werte werden letztendlich zum abrechnen verwendet
+
+
 var hunger
 
 var state = 0
 var currentMonster
+
 var selectedPotions = []
 var buffs = []
+onready var buffBar = get_node("BuffBar")
 
 onready var anim = get_node("anim")
-
+onready var attackSpeedHandler = get_node("attackSpeedHandler")
+onready var healthBar = get_node("healthBar")
 
 func _ready():
-	anim.set_default_blend_time(0.3)
+	attackSpeedHandler.connect("timeout", self, "afterAttackWait")
 	anim.connect("finished",self,"after_attack")
+	
+	anim.set_default_blend_time(0.3)
+	healthBar.set_value(hp)
+	
+	
+	setAttackSpeed(1 / attackSpeed)
+	
 	if currentMonster != null:
 		attack()
 		currentMonster.startFighting()
@@ -30,7 +44,6 @@ func _ready():
 
 func ready_monster_loaded():
 	
-	print("cu  monster; ", currentMonster)
 	if currentMonster != null:
 		attack()
 		currentMonster.startFighting()
@@ -44,22 +57,86 @@ func after_attack():
 	#hunger wird weniger
 	#waffe nimmt schaden
 	#wenn attacke gemacht wurde prozentual deren schaden verringern...
+	anim.play("idle")
+	if state == 1:
+		attackSpeedHandler.start()
+
+func afterAttackWait():
+	
 	if state == 1:
 		attack()
-	elif state == 0:
-		#print("animas: ",anim.get_animation_list())
-		anim.play("idle")
 		
 func attack():
 	anim.play("attack")
 
+func setAttackSpeed(attackLength):
+	var animLength = anim.get_animation("attack").get_length()
+	if attackLength >= animLength:
+		attackSpeedHandler.set_wait_time(attackLength - animLength)
+	else:
+		attackSpeedHandler.set_wait_time(0.01)
+
 
 func dealDamage():
 	#print("Damage dealt")
-	currentMonster.monsterTakesDmg(strength)
+	currentMonster.monsterTakesDmg(strength())
+	print("selected potions: ", selectedPotions)
+	
+	buffKnight()
+	
+	
+func knightTakesDmg(value):
+	hp -= value * (1 - defense)
+	healthBar.set_value(hp)
+	
+	print("LebenKnight: ", hp)
+
+func buffKnight():
+	for s in selectedPotions:
+		buffs.append(s.getBuff())
+		
+		if buffs.size() > 10:
+			buffs.remove(0)
+	buffBar.arrangeBuffs()
+	selectedPotions.clear()
+	
+func buffStats():
+	var dic = {"strength": 0,
+				"defense": 0,
+				"agility": 0,
+				"lifeReg": 0,
+				"crit": 0}
+	for b in buffs:
+		dic["strength"] += b.strength
+		dic["defense"] += b.defense
+		dic["agility"] += b.agility
+		dic["lifeReg"] += b.lifeReg
+		dic["crit"] += b.crit
+		
+	return dic
+	
+	
+	
+	
+func strength():
+	return buffStats()["strength"] + strength
+	
+func defense():
+	return buffStats()["defense"] + defense
+	
+func agility():
+	return buffStats()["agility"] + agility
+	
+func lifeReg():
+	return buffStats()["lifeReg"] + lifeReg
+	
+func crit():
+	return buffStats()["crit"] + crit
+	
 	
 
-
-func knightTakesDmg(value):
-	hp -= value
-	print("LebenKnight: ", hp)
+func _on_lifeReg_timeout():
+	hp += lifeReg()
+	if hp > healthBar.get_max():
+		hp = healthBar.get_max()
+	healthBar.set_value(hp)

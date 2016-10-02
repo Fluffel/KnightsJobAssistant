@@ -1,32 +1,51 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=27 format=1]
 
 [ext_resource path="res://Scenes/BattleArenaScene/Monsters/monster1.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/BattleArenaScene/Knight/Koerper.png" type="Texture" id=2]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle.png" type="Texture" id=2]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0000.png" type="Texture" id=3]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0001.png" type="Texture" id=4]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0002.png" type="Texture" id=5]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0003.png" type="Texture" id=6]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0004.png" type="Texture" id=7]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0005.png" type="Texture" id=8]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0006.png" type="Texture" id=9]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0007.png" type="Texture" id=10]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0008.png" type="Texture" id=11]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0009.png" type="Texture" id=12]
+[ext_resource path="res://Texturen/Animation/DrakoIdle/DrakoIdle0010.png" type="Texture" id=13]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0000.png" type="Texture" id=14]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0001.png" type="Texture" id=15]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0002.png" type="Texture" id=16]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0003.png" type="Texture" id=17]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0004.png" type="Texture" id=18]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0005.png" type="Texture" id=19]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0006.png" type="Texture" id=20]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0007.png" type="Texture" id=21]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0008.png" type="Texture" id=22]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0009.png" type="Texture" id=23]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/DrakoIdle0010.png" type="Texture" id=24]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ], "loop":true, "name":"idle", "speed":20.0 }, { "frames":[ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ], "loop":true, "name":"idle64", "speed":20.0 } ]
+
+[sub_resource type="Animation" id=2]
 
 resource/name = "attack"
 length = 0.4
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:transform/pos")
+tracks/0/path = NodePath(".:transform/rot")
 tracks/0/interp = 1
-tracks/0/keys = { "cont":true, "times":FloatArray( 0, 0.1, 0.4 ), "transitions":FloatArray( 1, 1, 1 ), "values":[ Vector2( 0, 0 ), Vector2( -27.1769, -10.6766 ), Vector2( 0, 0 ) ] }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:transform/rot")
-tracks/1/interp = 1
-tracks/1/keys = { "cont":true, "times":FloatArray( 0, 0.1, 0.4 ), "transitions":FloatArray( 1, 1, 1 ), "values":[ 0.0, 22.5354, 0.0 ] }
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/keys = { "times":FloatArray( 0.1 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"dealDamage" } ] }
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.2, 0.4 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 50.0, 0.0 ] }
 
 [node name="Node2D" type="Node2D"]
 
 script/script = ExtResource( 1 )
-hp = 60.0
-damage = 2.0
+hp = 50.0
+damage = 12.0
 defense = 0.0
 resistenceRed = 0.0
 resistenceBlue = 0.0
@@ -35,17 +54,18 @@ resistenceWhite = 0.0
 speed = 2.0
 intelligence = 0.0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
-texture = ExtResource( 2 )
-modulate = Color( 1, 0.0664062, 0.0664062, 1 )
+frames = SubResource( 1 )
+animation = "idle64"
+frame = 6
 
 [node name="animP" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/attack = SubResource( 1 )
+anims/attack = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

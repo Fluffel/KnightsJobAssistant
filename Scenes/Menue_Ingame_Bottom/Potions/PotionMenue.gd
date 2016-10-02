@@ -5,14 +5,15 @@ var potions = []
 #var button = Button()
 
 func _ready():
-	appendPotions(2, 1, 0)
-	appendPotions(2, 1, 0)
-	appendPotions(2, 1, 3)
-	appendPotions(2, 1, 1)
-	appendPotions(2, 1, 2)
-	appendPotions(2, 1, 3)
-	appendPotions(2, 1, 2)
-	appendPotions(2, 1, 3)
+	for i in range(10):
+		appendPotions(2, 1, Globals.get("RED"))
+		appendPotions(2, 1,Globals.get("RED"))
+		appendPotions(2, 1, Globals.get("BLUE"))
+		appendPotions(2, 1, Globals.get("BLUE"))
+		appendPotions(2, 1, Globals.get("GREEN"))
+		appendPotions(2, 1, Globals.get("GREEN"))
+		appendPotions(2, 1, Globals.get("BLACK"))
+		appendPotions(2, 1, Globals.get("BLACK"))
 	fillPotionsInButtons()
 	
 func appendPotions(multiply, lvl, type):

@@ -15,7 +15,7 @@ func updateLabels():
 	get_node("Label").set_text(str(potions.size()))
 	
 func activatePotion():
-	if potions.size() > offset:
+	if potions.size() > offset and knight.selectedPotions.size() < 3:
 		knight.selectedPotions.append(potions[offset])
 		potions.remove(offset)
 	updateLabels()

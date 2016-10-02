@@ -18,11 +18,7 @@ var sizemax = 1.25
 var sizemin = 0.75
 var sizeChange = Vector2()
 
-var timer = Timer.new()
-
 func _ready():
-	timer.set_wait_time(5)
-	timer.start()
 	set_pos(get_parent().get_parent().get_node("kampf").get_child(1).get_pos())
 	spawnPos = get_pos()
 	calculateMovement()
@@ -34,10 +30,7 @@ func _process(delta):
 	
 	set_pos(get_pos() + ges * delta)
 	if ges.y  > 0 and get_pos().y >= factorLandingpos:
-		#print("ges.x war: ", ges.x * delta)
 		get_parent().get_parent().get_node("assistant").appendInformation(self)
-		#print("realTimer: ", timer.get_time_left())
-		#print("realLPos: ", get_pos())
 		set_process(false)
 	
 	ges = ges + bes * delta
