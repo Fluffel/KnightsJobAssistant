@@ -9,6 +9,7 @@ script/script = ExtResource( 1 )
 
 [node name="Panel" type="Sprite" parent="."]
 
+visibility/opacity = 0.1
 transform/pos = Vector2( 1.63044, -1.07526 )
 transform/scale = Vector2( 0.07085, 0.092379 )
 texture = ExtResource( 2 )

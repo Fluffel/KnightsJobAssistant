@@ -1,6 +1,10 @@
 extends "res://Scenes/BattleArenaScene/Monsters/monster.gd"
 
-func _ready():
-	var animSp = get_node("AnimatedSprite")
-	
-	animSp.play(animSp.get_animation())
+onready var sp = get_node("Sprite")
+
+
+func getTexture():
+	return(sp)
+
+func setAnimationspeed(speed):
+	animP.set_speed(speed)

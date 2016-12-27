@@ -38,14 +38,11 @@ transform/scale = Vector2( 1, 1 )
 [node name="Timer" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 3.0
+wait_time = 0.5
 one_shot = true
 autostart = false
 
 [node name="assistant" parent="." instance=ExtResource( 3 )]
-
-margin/left = 0.0
-margin/top = 0.0
 
 [node name="items" type="Control" parent="."]
 

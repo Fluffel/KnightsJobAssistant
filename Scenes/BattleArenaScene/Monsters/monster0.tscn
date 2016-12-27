@@ -1,0 +1,69 @@
+[gd_scene load_steps=15 format=1]
+
+[ext_resource path="res://Scenes/BattleArenaScene/Monsters/monster0.gd" type="Script" id=1]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0000.png" type="Texture" id=2]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0001.png" type="Texture" id=3]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0002.png" type="Texture" id=4]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0003.png" type="Texture" id=5]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0004.png" type="Texture" id=6]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0005.png" type="Texture" id=7]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0006.png" type="Texture" id=8]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0007.png" type="Texture" id=9]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0008.png" type="Texture" id=10]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0009.png" type="Texture" id=11]
+[ext_resource path="res://Texturen/Animation/DrakoIdle64/Drako0010.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+
+resource/name = "Idle64"
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ], "loop":true, "name":"Idle64", "speed":20.0 } ]
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "attack"
+length = 0.4
+loop = false
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.2, 0.4 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 50.0, 0.0 ] }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0.21 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"dealDamage" } ] }
+
+[node name="Node2D" type="Node2D"]
+
+transform/rot = 5.96046e-06
+script/script = ExtResource( 1 )
+hp = 1000.0
+damage = 10.0
+defense = 0.0
+resistenceRed = 0.0
+resistenceBlue = 0.0
+resistenceYellow = 0.0
+resistenceWhite = 0.0
+attackSpeed = 0.0
+intelligence = 0.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 1 )
+animation = "Idle64"
+frame = 3
+
+[node name="animP" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/attack = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+

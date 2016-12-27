@@ -18,6 +18,13 @@ var currentMonster
 
 var selectedPotions = []
 var buffs = []
+
+#var specialattackScenes = []
+#var spPath = "res://Scenes/BattleArenaScene/Knight/SpeccialAttacks"
+
+#var loadedSpecialattacksDictionnary = load("res://HelperScripts/SpecialattacksDictionnary.gd")
+onready var specialattacksDictionnary = get_node("/root/SpecialattacksDictionnary")
+
 onready var buffBar = get_node("BuffBar")
 
 onready var anim = get_node("anim")
@@ -25,8 +32,11 @@ onready var attackSpeedHandler = get_node("attackSpeedHandler")
 onready var healthBar = get_node("healthBar")
 
 func _ready():
+	
 	attackSpeedHandler.connect("timeout", self, "afterAttackWait")
 	anim.connect("finished",self,"after_attack")
+	
+#	createSpecialattackArray()
 	
 	anim.set_default_blend_time(0.3)
 	healthBar.set_value(hp)
@@ -79,17 +89,32 @@ func setAttackSpeed(attackLength):
 
 func dealDamage():
 	#print("Damage dealt")
-	currentMonster.monsterTakesDmg(strength())
+	var specialattack = specialattacksDictionnary.initializeSpecialattack(selectedPotions, buffs)
+	
+	if specialattack != null:
+		activateSpecialattack(specialattack)
+	else:
+		if currentMonster != null:
+			currentMonster.monsterTakesDmg(strength(), true)
+		
 	print("selected potions: ", selectedPotions)
 	
 	buffKnight()
 	
-	
+func activateSpecialattack(specialattack):
+	if specialattack.addToKnight == true:
+		add_child(specialattack)
+	elif specialattack.addToKnight == false:
+		currentMonster.add_child(specialattack)
+		
+	specialattack.makeYourImpact()
+
 func knightTakesDmg(value):
 	hp -= value * (1 - defense)
 	healthBar.set_value(hp)
 	
 	print("LebenKnight: ", hp)
+	
 
 func buffKnight():
 	for s in selectedPotions:

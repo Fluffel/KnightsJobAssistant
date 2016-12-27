@@ -83,7 +83,7 @@ tracks/12/type = "value"
 tracks/12/path = NodePath("Huefte/Körper/FU_Arm/FL_Arm/Node2D/waepon:transform/rot")
 tracks/12/interp = 1
 tracks/12/imported = false
-tracks/12/keys = { "times":FloatArray( 0, 0.6, 0.8, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 92.7695, 66.649, 40.2179, 88.9446 ] }
+tracks/12/keys = { "times":FloatArray( 0, 0.6, 0.8, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 66.649, 40.2179, 88.9446 ] }
 tracks/13/type = "method"
 tracks/13/path = NodePath(".")
 tracks/13/interp = 1
@@ -138,7 +138,7 @@ agility = 0.0
 lifeReg = 0.0
 crit = 0.0
 hp = 100
-attackSpeed = 0.2
+attackSpeed = 1.0
 
 [node name="healthBar" type="ProgressBar" parent="."]
 
@@ -173,8 +173,8 @@ autoplay = ""
 
 [node name="Huefte" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 12.844, -36.5058 )
-transform/rot = 2.7249
 
 [node name="Körper" type="Sprite" parent="Huefte"]
 
@@ -188,7 +188,7 @@ __meta__ = { "_edit_bone_":true }
 
 editor/display_folded = true
 transform/pos = Vector2( 3.21575, 17.9406 )
-transform/rot = -18.8058
+transform/rot = 0.165762
 z/z = -1
 texture = ExtResource( 3 )
 centered = false
@@ -199,7 +199,6 @@ __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 [node name="BL_Arm" type="Sprite" parent="Huefte/Körper/BU_Arm"]
 
 transform/pos = Vector2( -0.268387, 31.2667 )
-transform/rot = 37.727
 texture = ExtResource( 4 )
 centered = false
 offset = Vector2( -7.15815, -5.67046 )
@@ -214,7 +213,6 @@ __meta__ = { "_edit_bone_":true }
 [node name="FU_Arm" type="Sprite" parent="Huefte/Körper"]
 
 transform/pos = Vector2( 4.15935, 15.2234 )
-transform/rot = 104.087
 z/z = 2
 texture = ExtResource( 5 )
 centered = false
@@ -225,7 +223,7 @@ __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 [node name="FL_Arm" type="Sprite" parent="Huefte/Körper/FU_Arm"]
 
 transform/pos = Vector2( -0.720371, 36.1725 )
-transform/rot = 60.7444
+transform/rot = 12.9757
 texture = ExtResource( 6 )
 centered = false
 offset = Vector2( -6.9504, -2.25791 )
@@ -239,7 +237,6 @@ __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 [node name="waepon" type="Sprite" parent="Huefte/Körper/FU_Arm/FL_Arm/Node2D"]
 
 transform/pos = Vector2( 4.58433, -0.409386 )
-transform/rot = 64.5813
 transform/scale = Vector2( 0.6, 2.5 )
 texture = ExtResource( 5 )
 centered = false
@@ -247,8 +244,7 @@ offset = Vector2( -9.8711, -1.71973 )
 
 [node name="Kopf" type="Sprite" parent="Huefte/Körper"]
 
-transform/pos = Vector2( 1.17442, -22.7808 )
-transform/rot = 4.21676
+transform/pos = Vector2( 2.01877, -22.9794 )
 texture = ExtResource( 7 )
 offset = Vector2( 0.518769, 2.28569 )
 __meta__ = { "_edit_bone_":true }
@@ -257,14 +253,13 @@ __meta__ = { "_edit_bone_":true }
 
 editor/display_folded = true
 transform/pos = Vector2( 11.3364, -53.2505 )
-transform/rot = -76.1193
 texture = ExtResource( 8 )
 offset = Vector2( 0.602062, 17.4034 )
 
 [node name="FL_Bein" type="Sprite" parent="FU_Bein"]
 
 transform/pos = Vector2( 0.496674, 35.264 )
-transform/rot = -7.91658
+transform/rot = -1.4
 texture = ExtResource( 9 )
 offset = Vector2( 0.105426, 17.9497 )
 __meta__ = { "_edit_bone_":true }
@@ -279,14 +274,14 @@ __meta__ = { "_edit_bone_":true }
 
 editor/display_folded = true
 transform/pos = Vector2( 17.7917, -54.5341 )
-transform/rot = 75.1752
+transform/rot = 22.0902
 texture = ExtResource( 10 )
 offset = Vector2( 0.443252, 20.5915 )
 
 [node name="BL_Bein" type="Sprite" parent="BU_Bein"]
 
 transform/pos = Vector2( -0.248345, 38.244 )
-transform/rot = -23.771
+transform/rot = -21.6742
 texture = ExtResource( 11 )
 offset = Vector2( 0.691566, 20.5225 )
 __meta__ = { "_edit_bone_":true }
